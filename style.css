@@ -179,7 +179,7 @@ nav.scrolled .nav-logo img { height: 42px; }
   display: none;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--bg-2);
+  background: rgba(237,234,230,0.02);
   z-index: 99;
   flex-direction: column;
   justify-content: center;
@@ -387,7 +387,7 @@ section { padding: 4.5rem 2.6rem; }
   border-bottom: 1px solid var(--border);
   overflow: hidden;
   padding: 0.95rem 0;
-  background: var(--bg-2);
+  background: rgba(237,234,230,0.02);
 }
 
 .marquee-track {
@@ -443,8 +443,8 @@ section { padding: 4.5rem 2.6rem; }
     105deg,
     rgba(245,242,238,0.82) 0%,
     rgba(245,242,238,0.52) 40%,
-    rgba(245,242,238,0.18) 70%,
-    rgba(212,84,30,0.02) 100%
+    rgba(245,242,238,0.08) 70%,
+    rgba(212,84,30,0.01) 100%
   );
   z-index: 1;
 }
@@ -502,7 +502,7 @@ section { padding: 4.5rem 2.6rem; }
 
 .hero-stat {
   padding: 1.2rem 2.2rem;
-  background: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.52);
   border-right: 1px solid var(--border-warm);
   text-align: center;
   position: relative;
@@ -557,7 +557,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .service-pillar {
-  background: rgba(255,255,255,0.58);
+  background: rgba(255,255,255,0.52);
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -580,7 +580,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .service-pillar:hover {
-  background: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.52);
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
@@ -623,7 +623,7 @@ section { padding: 4.5rem 2.6rem; }
   padding: 2.5rem 2.6rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(237,234,230,0.55);
+  background: rgba(237,234,230,0.02);
   position: relative;
 }
 
@@ -658,7 +658,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .brand-wall-tile {
-  background: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.52);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -671,7 +671,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .brand-wall-tile::before { content: ''; position: absolute; inset: 0; background: var(--ember-glow); opacity: 0; transition: opacity 0.3s; }
-.brand-wall-tile:hover { background: rgba(255,255,255,0.98); }
+.brand-wall-tile:hover { background: rgba(255,255,255,0.72); }
 .brand-wall-tile:hover::before { opacity: 0.6; }
 
 .brand-wall-tile::after {
@@ -731,7 +731,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .about-preview-content {
-  background: rgba(237,234,230,0.60);
+  background: rgba(237,234,230,0.52);
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
@@ -755,7 +755,7 @@ section { padding: 4.5rem 2.6rem; }
 /* ─────────────────────────────────────────────
    REVIEWS CAROUSEL
    ───────────────────────────────────────────── */
-.reviews-section { background: rgba(237,234,230,0.50); }
+.reviews-section { background: rgba(237,234,230,0.02); }
 
 .reviews-header {
   display: flex;
@@ -779,7 +779,7 @@ section { padding: 4.5rem 2.6rem; }
   min-width: 100%;
   box-sizing: border-box;
   padding: 2.5rem 3rem;
-  background: rgba(255,255,255,0.60);
+  background: rgba(255,255,255,0.52);
   border: none;
 }
 
@@ -826,8 +826,8 @@ section { padding: 4.5rem 2.6rem; }
 
 .reviews-carousel-btn:hover { border-color: var(--ember); color: var(--ember); }
 
-.review-card { background: rgba(255,255,255,0.82); display: flex; flex-direction: column; gap: 1rem; transition: background 0.25s; }
-.review-card:hover { background: rgba(255,255,255,0.98); }
+.review-card { background: rgba(255,255,255,0.52); display: flex; flex-direction: column; gap: 1rem; transition: background 0.25s; }
+.review-card:hover { background: rgba(255,255,255,0.72); }
 .review-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.08em; }
 .review-card blockquote { font-family: 'Crimson Pro', serif; font-size: 1rem; line-height: 1.7; color: var(--text-muted); font-style: italic; font-weight: 300; flex: 1; border-left: 2px solid var(--ember); padding-left: 1rem; }
 .review-author { display: flex; align-items: center; gap: 0.75rem; }
@@ -860,7 +860,7 @@ section { padding: 4.5rem 2.6rem; }
    ───────────────────────────────────────────── */
 .page-hero {
   padding: 3.25rem 2.6rem 2.25rem;
-  background: rgba(245,242,238,0.60);
+  background: rgba(245,242,238,0.02);
   border-bottom: 1px solid var(--border);
 }
 
@@ -883,7 +883,7 @@ section { padding: 4.5rem 2.6rem; }
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1rem 2.6rem;
-  background: rgba(237,234,230,0.95);
+  background: rgba(237,234,230,0.52);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 60px;
@@ -919,7 +919,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .explore-brand-card {
-  background: rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.52);
   display: flex;
   flex-direction: column;
   transition: background 0.25s, box-shadow 0.25s;
@@ -930,7 +930,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .explore-brand-card:hover {
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.52);
   box-shadow: 0 6px 24px rgba(0,0,0,0.10);
 }
 
@@ -953,7 +953,7 @@ section { padding: 4.5rem 2.6rem; }
   width: 100%;
   height: 220px;
   overflow: hidden;
-  background: var(--bg-3);
+  background: rgba(228,224,218,0.52);
   flex-shrink: 0;
 }
 
@@ -1040,7 +1040,7 @@ section { padding: 4.5rem 2.6rem; }
 .service-block:hover .service-block-img img { transform: scale(1.04); }
 
 .service-block-content {
-  background: rgba(237,234,230,0.60);
+  background: rgba(237,234,230,0.52);
   padding: 2.3rem;
   display: flex;
   flex-direction: column;
@@ -1058,7 +1058,7 @@ section { padding: 4.5rem 2.6rem; }
 
 /* Service count boxes (Why OGS section) */
 .about-value {
-  background: rgba(255,255,255,0.50);
+  background: rgba(255,255,255,0.52);
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -1067,7 +1067,7 @@ section { padding: 4.5rem 2.6rem; }
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-.about-value:hover { background: rgba(255,255,255,0.95); }
+.about-value:hover { background: rgba(255,255,255,0.72); }
 .about-value-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--ember); line-height: 1; opacity: 0.45; }
 .about-value h3 { font-size: 1rem; font-weight: 500; color: var(--text); }
 .about-value p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; font-family: 'Crimson Pro', serif; }
@@ -1102,7 +1102,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .about-story-content {
-  background: rgba(237,234,230,0.60);
+  background: rgba(237,234,230,0.52);
   padding: 2.6rem;
   display: flex;
   flex-direction: column;
@@ -1168,7 +1168,7 @@ section { padding: 4.5rem 2.6rem; }
 
 /* Stat bar */
 .about-stats-grid {
-  background: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.52);
   border: 1px solid var(--border-warm);
   border-top: 3px solid var(--ember);
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
@@ -1185,7 +1185,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .about-hours-panel {
-  background: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.52);
   padding: 2.5rem;
 }
 
@@ -1210,7 +1210,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .contact-info-panel {
-  background: rgba(237,234,230,0.60);
+  background: rgba(237,234,230,0.52);
   padding: 2.3rem;
   display: flex;
   flex-direction: column;
@@ -1294,7 +1294,7 @@ section { padding: 4.5rem 2.6rem; }
    FOOTER
    ───────────────────────────────────────────── */
 footer {
-  background: var(--bg-2);
+  background: rgba(237,234,230,0.02);
   border-top: 1px solid rgba(0,0,0,0.10);
 }
 
@@ -1304,7 +1304,7 @@ footer {
   gap: 2rem;
   padding: 2rem 2.6rem 1.8rem;
   border-bottom: 1px solid rgba(0,0,0,0.08);
-  background: var(--bg-2);
+  background: rgba(237,234,230,0.02);
 }
 
 .footer-brand img { height: 40px; width: auto; margin-bottom: 0.75rem; }
@@ -1342,7 +1342,7 @@ footer {
   padding: 0.9rem 2.6rem;
   flex-wrap: wrap;
   gap: 0.75rem;
-  background: var(--bg-3);
+  background: rgba(228,224,218,0.52);
 }
 
 .footer-copy { font-size: 0.7rem; color: var(--text-dim); font-weight: 300; }
