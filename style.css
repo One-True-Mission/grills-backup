@@ -306,21 +306,21 @@ section { padding: 4.5rem 2.6rem; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: transparent;
-  color: var(--text-muted);
+  background: rgba(245,242,238,0.92);
+  color: var(--text);
   padding: 0.85rem 2rem;
   border-radius: 2px;
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 1px solid rgba(0,0,0,0.18);
+  border: 1px solid rgba(0,0,0,0.22);
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, transform 0.15s;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
   text-decoration: none;
 }
 
-.btn-ghost:hover { color: var(--text); border-color: rgba(0,0,0,0.35); transform: translateY(-2px); }
+.btn-ghost:hover { background: #fff; color: var(--text); border-color: rgba(0,0,0,0.40); transform: translateY(-2px); }
 
 .btn-gold {
   display: inline-flex;
@@ -483,8 +483,9 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .hero-title .outline {
-  -webkit-text-stroke: 2px rgba(26,23,21,0.22);
-  color: transparent;
+  -webkit-text-stroke: 3px #1A1715;
+  color: var(--ember);
+  paint-order: stroke fill;
 }
 
 .hero-title .ember { color: var(--ember); }
@@ -915,31 +916,48 @@ section { padding: 4.5rem 2.6rem; }
 .catalog-filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 1rem 2.6rem;
-  background: rgba(237,234,230,0.52);
-  border-bottom: 1px solid var(--border);
+  gap: 0.6rem;
+  padding: 1.2rem 2.6rem;
+  background: rgba(245,242,238,0.92);
+  border-bottom: 2px solid var(--ember);
+  border-top: 1px solid rgba(212,84,30,0.15);
   position: sticky;
   top: 60px;
   z-index: 50;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .filter-btn {
-  background: rgba(255,255,255,0.70);
-  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.14);
   color: var(--text-muted);
-  padding: 0.45rem 1rem;
-  border-radius: 2px;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.22s ease;
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
-.filter-btn:hover, .filter-btn.active { background: var(--ember); border-color: var(--ember); color: #fff; }
+.filter-btn:hover {
+  background: rgba(212,84,30,0.08);
+  border-color: var(--ember);
+  color: var(--ember);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(212,84,30,0.15);
+}
+
+.filter-btn.active {
+  background: var(--ember);
+  border-color: var(--ember);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(212,84,30,0.35);
+  transform: translateY(-1px);
+}
 
 /* ─────────────────────────────────────────────
    EXPLORE BRANDS GRID
@@ -1221,11 +1239,15 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .about-hours-panel {
-  background: rgba(255,255,255,0.78);
+  background: rgba(245,242,238,0.92);
   padding: 2.5rem;
+  border-left: 3px solid var(--ember);
 }
 
-.about-location-panel { border-left: 1px solid var(--border); }
+.about-location-panel {
+  border-left: 1px solid var(--border);
+  border-left: 3px solid var(--ember);
+}
 
 .hours-grid { display: flex; flex-direction: column; gap: 0.4rem; }
 .hours-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.07); color: var(--text-muted); }
@@ -1548,7 +1570,7 @@ footer {
   }
 
   /* Catalog filter */
-  .catalog-filter { padding: 0.85rem 1.2rem; top: 60px; }
+  .catalog-filter { padding: 1rem 1.2rem; top: 60px; gap: 0.5rem; }
 
   /* Explore brands */
   .explore-brands-grid { grid-template-columns: 1fr; width: 100%; }
