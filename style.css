@@ -883,7 +883,13 @@ section { padding: 4.5rem 2.6rem; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(245,242,238,0.52);
+  background: linear-gradient(
+    105deg,
+    rgba(245,242,238,0.82) 0%,
+    rgba(245,242,238,0.52) 40%,
+    rgba(245,242,238,0.08) 70%,
+    rgba(212,84,30,0.01) 100%
+  );
   z-index: 0;
 }
 
@@ -1526,6 +1532,14 @@ footer {
 
   /* Page hero */
   .page-hero { padding: 2rem 1.2rem 1.5rem; background-attachment: scroll; }
+  .page-hero::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(245,242,238,0.88) 0%,
+      rgba(245,242,238,0.60) 60%,
+      rgba(245,242,238,0.10) 100%
+    );
+  }
 
   /* Catalog filter */
   .catalog-filter { padding: 0.85rem 1.2rem; top: 60px; }
