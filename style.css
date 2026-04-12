@@ -860,8 +860,25 @@ section { padding: 4.5rem 2.6rem; }
    ───────────────────────────────────────────── */
 .page-hero {
   padding: 3.25rem 2.6rem 2.25rem;
-  background: rgba(245,242,238,0.02);
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245,242,238,0.52);
+  z-index: 0;
+}
+
+.page-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero-title {
@@ -1493,7 +1510,7 @@ footer {
   .cta-band { background-attachment: scroll; padding: 2.5rem 1.2rem; }
 
   /* Page hero */
-  .page-hero { padding: 2rem 1.2rem 1.5rem; }
+  .page-hero { padding: 2rem 1.2rem 1.5rem; background-attachment: scroll; }
 
   /* Catalog filter */
   .catalog-filter { padding: 0.85rem 1.2rem; top: 60px; }
