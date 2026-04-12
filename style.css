@@ -1239,13 +1239,12 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .about-hours-panel {
-  background: rgba(245,242,238,0.92);
+  background: #F5F2EE;
   padding: 2.5rem;
   border-left: 3px solid var(--ember);
 }
 
 .about-location-panel {
-  border-left: 1px solid var(--border);
   border-left: 3px solid var(--ember);
 }
 
