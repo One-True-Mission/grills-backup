@@ -55,7 +55,7 @@ body::before {
   background-position: center;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.48;
 }
 
 img { max-width: 100%; display: block; }
