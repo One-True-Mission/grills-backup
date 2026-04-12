@@ -1235,7 +1235,8 @@ section { padding: 4.5rem 2.6rem; }
 .about-hours-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
+  gap: 0;
+  background: #F5F2EE;
 }
 
 .about-hours-panel {
@@ -1245,7 +1246,9 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .about-location-panel {
+  background: #F5F2EE;
   border-left: 3px solid var(--ember);
+  padding: 2.5rem;
 }
 
 .hours-grid { display: flex; flex-direction: column; gap: 0.4rem; }
