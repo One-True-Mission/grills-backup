@@ -1726,3 +1726,30 @@ nav {
   height: 100% !important;
   object-fit: cover !important;
 }
+
+
+/* Store front split — PC has margins, mobile stacks image below text */
+.about-story-storefront {
+  margin: 0 2.6rem;
+}
+
+@media (max-width: 900px) {
+  .about-story-storefront {
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    /* Reverse order so image shows after text on mobile */
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* On mobile, push the image to bottom by reversing order */
+  .about-story-storefront .about-story-content {
+    order: 1;
+  }
+
+  .about-story-storefront .about-story-img {
+    order: 2;
+    min-height: 280px !important;
+  }
+}
