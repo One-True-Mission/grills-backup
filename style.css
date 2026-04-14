@@ -45,7 +45,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fixed background image — hero image bleeds through all sections faintly */
+/* Fixed background image — hero image bleeds through all sections */
 body::before {
   content: '';
   position: fixed;
@@ -55,7 +55,7 @@ body::before {
   background-position: center;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.90;
+  opacity: 0.65;
 }
 
 img { max-width: 100%; display: block; }
@@ -76,7 +76,7 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────────────
-   ANNOUNCEMENT BANNER (hidden — toggle when needed)
+   ANNOUNCEMENT BANNER
    ───────────────────────────────────────────── */
 #announce-banner { display: none !important; }
 
@@ -95,7 +95,8 @@ nav {
   background: rgba(245, 242, 238, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0,0,0,0.10);
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
   transition: height 0.3s, background 0.3s;
 }
 
@@ -143,9 +144,10 @@ nav.scrolled .nav-logo img { height: 42px; }
   font-weight: 500 !important;
   transition: background 0.2s, transform 0.15s !important;
   margin-left: 0.5rem;
+  box-shadow: 0 2px 8px rgba(212,84,30,0.30);
 }
 
-.nav-cta:hover { background: var(--ember-light) !important; transform: translateY(-1px); }
+.nav-cta:hover { background: var(--ember-light) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212,84,30,0.40); }
 .nav-cta.active { background: var(--ember) !important; color: #fff !important; }
 
 /* HAMBURGER */
@@ -265,6 +267,7 @@ section { padding: 4.5rem 2.6rem; }
   letter-spacing: 0.02em;
   margin-bottom: 1.2rem;
   color: var(--text);
+  max-width: 700px;
 }
 
 .section-title span { color: var(--ember); }
@@ -296,11 +299,12 @@ section { padding: 4.5rem 2.6rem; }
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(212,84,30,0.30);
 }
 
-.btn-primary:hover { background: var(--ember-light); transform: translateY(-2px); color: #fff; }
+.btn-primary:hover { background: var(--ember-light); transform: translateY(-2px); color: #fff; box-shadow: 0 4px 16px rgba(212,84,30,0.40); }
 
 .btn-ghost {
   display: inline-flex;
@@ -356,11 +360,12 @@ section { padding: 4.5rem 2.6rem; }
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(212,84,30,0.30);
 }
 
-.btn-catalog:hover { background: var(--ember-light); transform: translateY(-1px); color: #fff; }
+.btn-catalog:hover { background: var(--ember-light); transform: translateY(-1px); color: #fff; box-shadow: 0 4px 16px rgba(212,84,30,0.40); }
 
 .btn-catalog-ghost {
   display: inline-flex;
@@ -446,7 +451,7 @@ section { padding: 4.5rem 2.6rem; }
   background: linear-gradient(
     105deg,
     rgba(245,242,238,0.82) 0%,
-    rgba(245,242,238,0.92) 40%,
+    rgba(245,242,238,0.52) 40%,
     rgba(245,242,238,0.08) 70%,
     rgba(212,84,30,0.01) 100%
   );
@@ -570,7 +575,6 @@ section { padding: 4.5rem 2.6rem; }
   transition: background 0.25s, box-shadow 0.25s;
   position: relative;
   overflow: hidden;
-  border-left: 3px solid transparent;
 }
 
 .service-pillar::before {
@@ -584,11 +588,7 @@ section { padding: 4.5rem 2.6rem; }
   transition: transform 0.4s ease;
 }
 
-.service-pillar:hover {
-  background: rgba(255,255,255,0.92);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
+.service-pillar:hover { background: rgba(255,255,255,0.92); box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
 .service-pillar:hover::before { transform: scaleX(1); }
 
 .service-icon {
@@ -603,7 +603,7 @@ section { padding: 4.5rem 2.6rem; }
 
 .service-icon svg { width: 22px; height: 22px; stroke: var(--ember); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .service-pillar h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; line-height: 1; color: var(--text); }
-.service-pillar p { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; flex: 1; }
+.service-pillar p { font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; flex: 1; }
 
 .service-pillar a {
   display: inline-flex;
@@ -676,7 +676,7 @@ section { padding: 4.5rem 2.6rem; }
 }
 
 .brand-wall-tile::before { content: ''; position: absolute; inset: 0; background: var(--ember-glow); opacity: 0; transition: opacity 0.3s; }
-.brand-wall-tile:hover { background: rgba(255,255,255,0.92); }
+.brand-wall-tile:hover { background: rgba(255,255,255,0.98); }
 .brand-wall-tile:hover::before { opacity: 0.6; }
 
 .brand-wall-tile::after {
@@ -755,7 +755,7 @@ section { padding: 4.5rem 2.6rem; }
   border-left: 2px solid var(--ember);
 }
 
-.about-preview-content p { font-family: 'Crimson Pro', serif; font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); font-weight: 300; }
+.about-preview-content p { font-family: 'Crimson Pro', serif; font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); font-weight: 300; }
 
 /* ─────────────────────────────────────────────
    REVIEWS CAROUSEL
@@ -839,9 +839,9 @@ section { padding: 4.5rem 2.6rem; }
 .reviews-carousel-btn:hover { border-color: var(--ember); color: var(--ember); }
 
 .review-card { background: rgba(255,255,255,0.92); display: flex; flex-direction: column; gap: 1rem; transition: background 0.25s; }
-.review-card:hover { background: rgba(255,255,255,0.72); }
+.review-card:hover { background: rgba(255,255,255,0.98); }
 .review-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.08em; }
-.review-card blockquote { font-family: 'Crimson Pro', serif; font-size: 1rem; line-height: 1.7; color: var(--text-muted); font-style: italic; font-weight: 300; flex: 1; border-left: 2px solid var(--ember); padding-left: 1rem; }
+.review-card blockquote { font-family: 'Crimson Pro', serif; font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); font-style: italic; font-weight: 300; flex: 1; border-left: 2px solid var(--ember); padding-left: 1rem; }
 .review-author { display: flex; align-items: center; gap: 0.75rem; }
 .review-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--ember-glow); border: 1px solid var(--border-warm); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 500; color: var(--ember); flex-shrink: 0; }
 .review-name { font-size: 0.82rem; font-weight: 500; color: var(--text); }
@@ -887,17 +887,14 @@ section { padding: 4.5rem 2.6rem; }
   background: linear-gradient(
     105deg,
     rgba(245,242,238,0.82) 0%,
-    rgba(245,242,238,0.92) 40%,
+    rgba(245,242,238,0.52) 40%,
     rgba(245,242,238,0.08) 70%,
     rgba(212,84,30,0.01) 100%
   );
   z-index: 0;
 }
 
-.page-hero > * {
-  position: relative;
-  z-index: 1;
-}
+.page-hero > * { position: relative; z-index: 1; }
 
 .page-hero-title {
   font-family: 'Bebas Neue', sans-serif;
@@ -981,10 +978,7 @@ section { padding: 4.5rem 2.6rem; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.explore-brand-card:hover {
-  background: rgba(255,255,255,0.92);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
-}
+.explore-brand-card:hover { background: rgba(255,255,255,0.98); box-shadow: 0 6px 24px rgba(0,0,0,0.10); }
 
 .explore-brand-card::before {
   content: '';
@@ -1003,7 +997,7 @@ section { padding: 4.5rem 2.6rem; }
 .explore-brand-img-wrap {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 200px;
   overflow: hidden;
   background: rgba(228,224,218,0.92);
   flex-shrink: 0;
@@ -1027,7 +1021,6 @@ section { padding: 4.5rem 2.6rem; }
   z-index: 1;
 }
 
-/* Logo on image — hidden, logos now in body */
 .explore-brand-logo { display: none; }
 
 .explore-brand-body {
@@ -1038,7 +1031,6 @@ section { padding: 4.5rem 2.6rem; }
   flex: 1;
 }
 
-/* Logo in body */
 .explore-body-logo {
   display: block;
   height: 36px;
@@ -1068,7 +1060,7 @@ section { padding: 4.5rem 2.6rem; }
   white-space: nowrap;
 }
 
-.explore-brand-body p { font-family: 'Crimson Pro', serif; font-size: 0.98rem; color: var(--text-muted); line-height: 1.72; font-weight: 300; flex: 1; }
+.explore-brand-body p { font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; flex: 1; }
 
 .explore-brand-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.25rem; }
 
@@ -1102,13 +1094,13 @@ section { padding: 4.5rem 2.6rem; }
 
 .service-block-content h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 0.95; color: var(--text); text-shadow: none; }
 .service-block-content h2 span { color: var(--ember); }
-.service-block-content p { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
+.service-block-content p { font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
 
 .service-includes { display: flex; flex-direction: column; gap: 0.6rem; }
 .service-includes li { display: flex; align-items: center; gap: 0.7rem; font-size: 0.88rem; color: var(--text-muted); }
 .service-includes li::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
 
-/* Service count boxes (Why OGS section) */
+/* Service count boxes */
 .about-value {
   background: rgba(255,255,255,0.92);
   padding: 2.5rem 2rem;
@@ -1119,7 +1111,7 @@ section { padding: 4.5rem 2.6rem; }
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-.about-value:hover { background: rgba(255,255,255,0.72); }
+.about-value:hover { background: rgba(255,255,255,0.98); }
 .about-value-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--ember); line-height: 1; opacity: 0.45; }
 .about-value h3 { font-size: 1rem; font-weight: 500; color: var(--text); }
 .about-value p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; font-family: 'Crimson Pro', serif; }
@@ -1164,7 +1156,7 @@ section { padding: 4.5rem 2.6rem; }
 
 .about-story-content h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 0.93; color: var(--text); }
 .about-story-content h2 span { color: var(--ember); }
-.about-story-content p { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; font-weight: 300; }
+.about-story-content p { font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; font-weight: 300; }
 
 /* STORE FRONT IMAGE */
 .store-front-wrap {
@@ -1339,11 +1331,12 @@ section { padding: 4.5rem 2.6rem; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(212,84,30,0.30);
 }
 
-.form-submit:hover { background: var(--ember-light); transform: translateY(-1px); }
+.form-submit:hover { background: var(--ember-light); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212,84,30,0.40); }
 
 .form-success { display: none; text-align: center; padding: 3rem; background: rgba(255,255,255,0.85); border: 1px solid var(--border-warm); }
 .form-success.show { display: block; }
@@ -1494,7 +1487,6 @@ footer {
    ───────────────────────────────────────────── */
 @media (max-width: 900px) {
 
-  /* Nav */
   nav {
     display: grid;
     grid-template-columns: 40px 1fr 40px;
@@ -1522,8 +1514,6 @@ footer {
 
   .nav-drawer { display: flex; }
   .page-top { padding-top: 64px; }
-
-  /* Sections */
 
   /* Sections */
   section { padding: 3rem 1.2rem !important; }
@@ -1581,10 +1571,10 @@ footer {
   .explore-brand-body { padding: 1.4rem 1.4rem 1.8rem; }
 
   /* Service blocks */
-  .service-block { grid-template-columns: 1fr; margin: 0 0 1px; direction: ltr; width: 100%; }
+  .service-block { grid-template-columns: 1fr; margin: 0 0 1px; direction: ltr; width: 100%; padding: 0 1.2rem; }
   .service-block.reverse { direction: ltr; }
   .service-block-img { min-height: 240px; }
-  .service-block-content { padding: 2rem 1.4rem; width: 100%; }
+  .service-block-content { padding: 2rem 0; width: 100%; }
 
   /* About story */
   .about-story { grid-template-columns: 1fr; margin: 0; width: 100%; }
@@ -1669,65 +1659,8 @@ footer {
 }
 
 /* ─────────────────────────────────────────────
-   PROFESSIONAL POLISH
-   ─────────────────────────────────────────────
-
-   1. Nav border bottom more defined — light theme
-      navs need a stronger bottom edge or they float
-   2. Section titles need a consistent max-width so
-      long headlines don't stretch wall to wall
-   3. Body text size bump — 0.85rem is too small for
-      premium brand perception. 0.92rem reads better.
-   4. Ember buttons get a very subtle box shadow —
-      makes them feel physical and clickable
-   5. Brand card images get a consistent aspect ratio
-      enforced so the grid never looks uneven
-   ─────────────────────────────────────────────── */
-
-/* 1. Nav bottom edge */
-nav {
-  border-bottom: 1px solid rgba(0,0,0,0.12) !important;
-  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
-}
-
-/* 2. Section title max-width */
-.section-title {
-  max-width: 700px;
-}
-
-/* 3. Body text size — more premium feel */
-.service-pillar p,
-.about-preview-content p,
-.explore-brand-body p,
-.service-block-content p,
-.about-story-content p,
-.review-card blockquote,
-.about-value p {
-  font-size: 1.05rem !important;
-  line-height: 1.75 !important;
-}
-
-/* 4. Primary buttons get shadow — feel more clickable */
-.btn-primary, .btn-catalog, .nav-cta, .form-submit {
-  box-shadow: 0 2px 8px rgba(212,84,30,0.30);
-}
-
-.btn-primary:hover, .btn-catalog:hover, .nav-cta:hover, .form-submit:hover {
-  box-shadow: 0 4px 16px rgba(212,84,30,0.40);
-}
-
-/* 5. Brand card images consistent height */
-.explore-brand-img-wrap {
-  height: 200px !important;
-}
-
-.explore-brand-img-wrap img:first-child {
-  height: 100% !important;
-  object-fit: cover !important;
-}
-
-
-/* Store front split — PC has margins, mobile stacks image below text */
+   STORE FRONT SPLIT — mobile stack
+   ───────────────────────────────────────────── */
 .about-story-storefront {
   margin: 0 2.6rem;
 }
@@ -1737,12 +1670,10 @@ nav {
     margin: 0 !important;
     width: 100% !important;
     overflow: hidden !important;
-    /* Reverse order so image shows after text on mobile */
     display: flex !important;
     flex-direction: column !important;
   }
 
-  /* On mobile, push the image to bottom by reversing order */
   .about-story-storefront .about-story-content {
     order: 1;
   }
