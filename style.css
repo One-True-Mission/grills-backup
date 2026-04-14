@@ -1571,10 +1571,10 @@ footer {
   .explore-brand-body { padding: 1.4rem 1.4rem 1.8rem; }
 
   /* Service blocks */
-  .service-block { grid-template-columns: 1fr; margin: 0 0 1px; direction: ltr; width: 100%; padding: 0 1.2rem; }
+  .service-block { grid-template-columns: 1fr; margin: 0 0 1px; direction: ltr; width: 100%; }
   .service-block.reverse { direction: ltr; }
   .service-block-img { min-height: 240px; }
-  .service-block-content { padding: 2rem 0; width: 100%; }
+  .service-block-content { padding: 2rem 1.2rem; width: 100%; }
 
   /* About story */
   .about-story { grid-template-columns: 1fr; margin: 0; width: 100%; }
