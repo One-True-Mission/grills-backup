@@ -1524,10 +1524,9 @@ footer {
   .page-top { padding-top: 64px; }
 
   /* Sections */
-  section { padding: 3rem 1.2rem; }
 
   /* Sections */
-  section { padding: 3rem 0 !important; }
+  section { padding: 3rem 1.2rem !important; }
 
   /* Hero */
   .hero { padding: 6rem 1.2rem 3.5rem; }
