@@ -114,11 +114,11 @@ ul { list-style: none; }
 #announce-banner a:hover { color: rgba(255,255,255,0.85); }
 #announce-banner .banner-sep { opacity: 0.55; padding: 0 0.35rem; }
 
-/* Push nav + page down by banner height */
-body.has-banner nav { top: 42px; }
-body.has-banner .page-top { padding-top: 114px; }
-body.has-banner .hero { padding-top: 10rem; }
-body.has-banner .catalog-filter { top: 102px; }
+/* Push nav + page down by banner height — --banner-h set by nav.js */
+body.has-banner nav { top: var(--banner-h, 42px); }
+body.has-banner .page-top { padding-top: calc(72px + var(--banner-h, 42px)); }
+body.has-banner .hero { padding-top: calc(8rem + var(--banner-h, 42px)); }
+body.has-banner .catalog-filter { top: calc(60px + var(--banner-h, 42px)); }
 
 /* ─────────────────────────────────────────────
    NAVIGATION
@@ -1676,10 +1676,9 @@ footer {
   }
   #announce-banner .banner-text strong { font-size: 0.68rem; }
   #announce-banner .banner-sep { display: none; }
-  body.has-banner nav { top: 58px; }
-  body.has-banner .page-top { padding-top: 122px; }
-  body.has-banner .hero { padding-top: 8rem; }
-  body.has-banner .catalog-filter { top: 122px; }
+  /* Mobile banner height handled by --banner-h set in nav.js —
+     hero needs its own rule since it uses rem-based padding */
+  body.has-banner .hero { padding-top: calc(6rem + var(--banner-h, 58px)); }
 
   /* Appointment callout */
   .appointment-callout {
