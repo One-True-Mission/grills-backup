@@ -3,6 +3,22 @@
    ============================================================ */
 
 /* ─────────────────────────────────────────────
+   ANNOUNCEMENT BANNER
+   If the banner is visible in the page, add 'has-banner'
+   to the body so the nav + page layout shifts down for it.
+   ───────────────────────────────────────────── */
+function initAnnounceBanner() {
+  const banner = document.getElementById('announce-banner');
+  if (!banner) return;
+
+  // Only shift layout if the banner is actually being displayed
+  const style = window.getComputedStyle(banner);
+  if (style.display !== 'none') {
+    document.body.classList.add('has-banner');
+  }
+}
+
+/* ─────────────────────────────────────────────
    NAV SCROLL BEHAVIOR
    ───────────────────────────────────────────── */
 function initNavScroll() {
@@ -162,6 +178,7 @@ function initReviewsCarousel() {
    INIT ALL
    ───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
+  initAnnounceBanner();
   initNavScroll();
   initHamburger();
   initActiveNav();
