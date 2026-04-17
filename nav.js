@@ -4,8 +4,10 @@
 
 /* ─────────────────────────────────────────────
    ANNOUNCEMENT BANNER
-   If the banner is visible in the page, add 'has-banner'
-   to the body so the nav + page layout shifts down for it.
+   If the banner is visible, measure its actual rendered height
+   and set a CSS variable so the nav + page layout shift down
+   exactly the right amount (no gap, no overlap) — this handles
+   banner text wrapping on narrow screens automatically.
    ───────────────────────────────────────────── */
 function initAnnounceBanner() {
   const banner = document.getElementById('announce-banner');
@@ -13,8 +15,28 @@ function initAnnounceBanner() {
 
   // Only shift layout if the banner is actually being displayed
   const style = window.getComputedStyle(banner);
-  if (style.display !== 'none') {
-    document.body.classList.add('has-banner');
+  if (style.display === 'none') return;
+
+  document.body.classList.add('has-banner');
+
+  const setBannerHeight = () => {
+    const h = banner.offsetHeight;
+    document.documentElement.style.setProperty('--banner-h', h + 'px');
+  };
+
+  // Set initial height
+  setBannerHeight();
+
+  // Recalculate on resize in case banner text wraps differently
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setBannerHeight, 100);
+  });
+
+  // Recalculate once web fonts settle (they can change line height)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setBannerHeight);
   }
 }
 
